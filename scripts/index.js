@@ -1,7 +1,7 @@
 const cardTemplate = document.querySelector('#card-template');
 const cardList = document.querySelector('.places__list');
 
-function makeCard(card) {
+function makeCard(card, deleteCard) {
     const cardElement = cardTemplate.content.cloneNode(true);
     const cardImage = cardElement.querySelector('.card__image');
     const deleteButton = cardElement.querySelector('.card__delete-button');
@@ -22,6 +22,6 @@ function deleteCard(evt) {
 }
 
 initialCards.forEach(function (card) {
-    const displayedCard = makeCard(card);
+    const displayedCard = makeCard(card, deleteCard);
     cardList.append(displayedCard);
 });
